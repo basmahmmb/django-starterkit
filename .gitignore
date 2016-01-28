@@ -56,3 +56,4 @@ crashlytics-build.properties
 web-portal.db
 debug.log
 components/
+bower_components/

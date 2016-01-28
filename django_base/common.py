@@ -133,9 +133,9 @@ STATICFILES_FINDERS = (
 PIPELINE_CSS = {
     'theme': {
         'source_filenames': (
-            'common.css',
-            'bootstrap-bower/css/bootstrap-theme.min.css',
-            'bootstrap-bower/css/bootstrap.min.css',
+            'css/common.css',
+            'bootstrap/dist/css/bootstrap-theme.min.css',
+            'bootstrap/dist/css/bootstrap.min.css',
         ),
         'output_filename': 'css/theme.css',
         'extra_context': {
@@ -148,14 +148,14 @@ PIPELINE_JS = {
     'theme': {
         'source_filenames': (
             'jquery/dist/jquery.min.js',
-            'bootstrap-bower/js/bootstrap.min.js',
+            'bootstrap/dist/js/bootstrap.min.js',
         ),
         'output_filename': 'js/theme.js',
     }
 }
-BOWER_COMPONENTS_ROOT = BASE_DIR + '/components/'
+BOWER_COMPONENTS_ROOT = BASE_DIR + '/'
 BOWER_PATH = '/usr/bin/bower'
 BOWER_INSTALLED_APPS = (
     'jquery',
-    'bower-bootstrap',
+    'bootstrap',
 )
