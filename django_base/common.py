@@ -15,7 +15,6 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
@@ -26,7 +25,6 @@ SECRET_KEY = '=%2h+%ebz(7*y6)i8eoycf*ej)3-+tps1e8noajd_%9jvqlc^u'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -44,7 +42,6 @@ INSTALLED_APPS += [
     'pipeline',
     'djangobower',
 ]
-
 
 # my apps
 INSTALLED_APPS += [
@@ -82,8 +79,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'django_base.wsgi.application'
 
-
-
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
 
@@ -102,7 +97,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/
 
@@ -116,7 +110,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
@@ -127,30 +120,32 @@ STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    'pipeline.finders.PipelineFinder',
     'djangobower.finders.BowerFinder',
+    'pipeline.finders.PipelineFinder',
 )
-PIPELINE_CSS = {
-    'theme': {
-        'source_filenames': (
-            'css/common.css',
-            'bootstrap/dist/css/bootstrap-theme.min.css',
-            'bootstrap/dist/css/bootstrap.min.css',
-        ),
-        'output_filename': 'css/theme.css',
-        'extra_context': {
-            'media': 'screen,projection',
+PIPELINE = {
+    'PIPELINE_ENABLED': False,
+    'STYLESHEETS': {
+        'theme': {
+            'source_filenames': (
+                'css/common.css',
+                'bootstrap/dist/css/bootstrap-theme.min.css',
+                'bootstrap/dist/css/bootstrap.min.css',
+            ),
+            'output_filename': 'css/theme.css',
+            'extra_context': {
+                'media': 'screen,projection',
+            },
         },
     },
-}
-
-PIPELINE_JS = {
-    'theme': {
-        'source_filenames': (
-            'jquery/dist/jquery.min.js',
-            'bootstrap/dist/js/bootstrap.min.js',
-        ),
-        'output_filename': 'js/theme.js',
+    'JAVASCRIPT': {
+        'theme': {
+            'source_filenames': (
+                'jquery/dist/jquery.min.js',
+                'bootstrap/dist/js/bootstrap.min.js',
+            ),
+            'output_filename': 'js/theme.js',
+        }
     }
 }
 BOWER_COMPONENTS_ROOT = BASE_DIR + '/'

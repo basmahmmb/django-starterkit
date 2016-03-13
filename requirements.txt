@@ -1,3 +1,5 @@
-django==1.9
-django-pipeline==1.5.4
-django-bower==5.0.4
+Django==1.9.4
+django-bower==5.1.0
+django-pipeline==1.6.7
+futures==3.0.5
+six==1.10.0
