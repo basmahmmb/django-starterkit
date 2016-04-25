@@ -3,3 +3,5 @@
 Base django project structure
 ##Requirements:
 npm install bower
+
+gem install compass

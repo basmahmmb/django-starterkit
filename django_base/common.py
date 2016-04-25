@@ -39,7 +39,7 @@ INSTALLED_APPS = [
 
 # 3rd party
 INSTALLED_APPS += [
-    'pipeline',
+    "compressor",
     'djangobower',
 ]
 
@@ -56,7 +56,6 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'pipeline.middleware.MinifyHTMLMiddleware',
 ]
 
 ROOT_URLCONF = 'django_base.urls'
@@ -115,42 +114,19 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
-
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'djangobower.finders.BowerFinder',
-    'pipeline.finders.PipelineFinder',
+    'compressor.finders.CompressorFinder',
 )
-PIPELINE = {
-    'PIPELINE_ENABLED': False,
-    'STYLESHEETS': {
-        'theme': {
-            'source_filenames': (
-                'css/common.css',
-                'bootstrap/dist/css/bootstrap-theme.min.css',
-                'bootstrap/dist/css/bootstrap.min.css',
-            ),
-            'output_filename': 'css/theme.css',
-            'extra_context': {
-                'media': 'screen,projection',
-            },
-        },
-    },
-    'JAVASCRIPT': {
-        'theme': {
-            'source_filenames': (
-                'jquery/dist/jquery.min.js',
-                'bootstrap/dist/js/bootstrap.min.js',
-            ),
-            'output_filename': 'js/theme.js',
-        }
-    }
-}
 BOWER_COMPONENTS_ROOT = BASE_DIR + '/'
 BOWER_PATH = '/usr/bin/bower'
 BOWER_INSTALLED_APPS = (
-    'jquery',
-    'bootstrap',
+    'bootstrap#3.3.6',
+    'jquery#2.2.3',
 )
+COMPRESS_PRECOMPILERS = (
+    ('text/scss', 'sass --scss --compass {infile} {outfile}'),
+)
+COMPRESS_URL ="/static/"

@@ -1,5 +1,6 @@
 {% load i18n %}
-{% load pipeline %}
+{% load compress %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,9 +19,15 @@
     <meta name="author" content="Ahmadiga">
 
     <!-- Le styles -->
-    {% stylesheet 'theme' %}
-    {% block base_css %}
-    {% endblock %}
+    {% compress css %}
+        <link rel="stylesheet" href="{% static "bootstrap/dist/css/bootstrap-theme.min.css" %}" type="text/css"
+              charset="utf-8">
+        <link rel="stylesheet" href="{% static "bootstrap/dist/css/bootstrap.min.css" %}" type="text/css"
+              charset="utf-8">
+        <link rel="stylesheet" href="{% static "css/common.scss" %}" type="text/scss" charset="utf-8">
+        {% block base_css %}
+        {% endblock %}
+    {% endcompress %}
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
@@ -36,8 +43,12 @@
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 
-{% javascript 'theme' %}
-{% block base_js %}
-{% endblock %}
+
+{% compress js %}
+    <script src="{% static "jquery/dist/jquery.min.js" %}" type="text/javascript" charset="utf-8"></script>
+    <script src="{% static "bootstrap/dist/js/bootstrap.min.js" %}" type="text/javascript" charset="utf-8"></script>
+    {% block base_js %}
+    {% endblock %}
+{% endcompress %}
 </body>
 </html>
