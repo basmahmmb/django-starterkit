@@ -57,3 +57,4 @@ web-portal.db
 debug.log
 components/
 bower_components/
+.sass-cache/
