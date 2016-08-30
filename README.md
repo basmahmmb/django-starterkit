@@ -5,3 +5,5 @@ Base django project structure
 npm install bower
 
 gem install compass
+
+python manage.py bower_install

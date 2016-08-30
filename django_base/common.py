@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 INSTALLED_APPS += [
     "compressor",
     'djangobower',
+    'crispy_forms',
 ]
 
 # my apps
@@ -130,3 +131,9 @@ COMPRESS_PRECOMPILERS = (
     ('text/scss', 'sass --scss --compass {infile} {outfile}'),
 )
 COMPRESS_URL ="/static/"
+
+# Django registration 
+ACCOUNT_ACTIVATION_DAYS = 7
+
+# Crispy forms
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
