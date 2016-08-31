@@ -42,11 +42,13 @@ INSTALLED_APPS += [
     "compressor",
     'djangobower',
     'crispy_forms',
+    'channels',
 ]
 
 # my apps
 INSTALLED_APPS += [
     "main",
+    'chat',
 ]
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
@@ -130,10 +132,18 @@ BOWER_INSTALLED_APPS = (
 COMPRESS_PRECOMPILERS = (
     ('text/scss', 'sass --scss --compass {infile} {outfile}'),
 )
-COMPRESS_URL ="/static/"
+COMPRESS_URL = "/static/"
 
 # Django registration 
 ACCOUNT_ACTIVATION_DAYS = 7
 
 # Crispy forms
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
+# channels settings
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "asgiref.inmemory.ChannelLayer",
+        "ROUTING": "main.routing.channel_routing",
+    },
+}
