@@ -1,4 +1,5 @@
 FROM python:2.7
+ARG settings
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
@@ -15,4 +16,6 @@ RUN gem update --system
 RUN gem install compass
 RUN ln -s `which nodejs` /usr/bin/node
 RUN pip install --upgrade -r requirements.txt
-CMD python manage.py runserver 0.0.0.0:8000
+
+RUN python manage.py bower_install -- --allow-root
+RUN python manage.py collectstatic --settings=$settings --noinput
