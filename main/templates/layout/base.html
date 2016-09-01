@@ -7,30 +7,26 @@
     <meta charset="utf-8">
     <title>
         {% block site_title %}
-        {% trans "My site" %}
+            {% trans "My site" %}
         {% endblock %}
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="
         {% block site_description %}
-            {% trans " My site
-    " %}
+            {% trans "My site" %}
     {% endblock %}
     ">
     <meta name="author" content="Ahmadiga">
 
     <!-- Le styles -->
     {% compress css %}
-    <link rel="stylesheet" href="{% static " bootstrap
-    /dist/css/bootstrap-theme.min.css" %}" type="text/css"
-    charset="utf-8">
-    <link rel="stylesheet" href="{% static " bootstrap
-    /dist/css/bootstrap.min.css" %}" type="text/css"
-    charset="utf-8">
-    <link rel="stylesheet" href="{% static " css
-    /common.scss" %}" type="text/scss" charset="utf-8">
-    {% block base_css %}
-    {% endblock %}
+        <link rel="stylesheet" href="{% static "bootstrap/dist/css/bootstrap-theme.min.css" %}" type="text/css"
+              charset="utf-8">
+        <link rel="stylesheet" href="{% static "bootstrap/dist/css/bootstrap.min.css" %}" type="text/css"
+              charset="utf-8">
+        <link rel="stylesheet" href="{% static "css/common.scss" %}" type="text/scss" charset="utf-8">
+        {% block base_css %}
+        {% endblock %}
     {% endcompress %}
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
@@ -49,33 +45,10 @@
 
 
 {% compress js %}
-<script src="{% static " jquery
-/dist/jquery.min.js" %}" type="text/javascript" charset="utf-8"></script>
-<
-script
-src = "{% static "
-bootstrap / dist / js / bootstrap.min.js
-" %}"
-type = "text/javascript"
-charset = "utf-8" ></script>
-{% block base_js %}
-{% endblock %}
-<!--<script>-->
-<!--function check_con() {-->
-<!--ws1 = new WebSocket("ws://" + window.location.host + "/chat/?session_key={{ request.session.session_key }}");-->
-<!--ws1.onopen = function () {-->
-<!--window.location = window.location-->
-<!--}-->
-<!--}-->
-
-<!--// Note that the path doesn't matter right now; any WebSocket-->
-<!--// connection gets bumped over to WebSocket consumers-->
-<!--refresh = false;-->
-<!--ws = new WebSocket("ws://" + window.location.host + "/chat/?session_key={{ request.session.session_key }}");-->
-<!--ws.onclose = function () {-->
-<!--setTimeout(check_con, 1000);-->
-<!--};-->
-<!--</script>-->
+    <script src="{% static "jquery/dist/jquery.min.js" %}" type="text/javascript" charset="utf-8"></script>
+    <script src="{% static "bootstrap/dist/js/bootstrap.min.js" %}" type="text/javascript" charset="utf-8"></script>
+    {% block base_js %}
+    {% endblock %}
 {% endcompress %}
 </body>
 </html>
