@@ -5,13 +5,13 @@ services:
     build:
       context: ../
       args:
-        settings: 'django_base.qa'
+        settings: 'django_starterkit.qa'
     expose:
       - "8000"
     ports:
       - "8000:8000"
     environment:
-      DJANGO_SETTINGS_MODULE: 'django_base.qa'
+      DJANGO_SETTINGS_MODULE: 'django_starterkit.qa'
       DEBUG: 'false'
     command: python manage.py runserver 0.0.0.0:8000
     volumes:

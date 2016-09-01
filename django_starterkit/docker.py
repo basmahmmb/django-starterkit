@@ -1,5 +1,5 @@
 try:
-    from django_base.common import *
+    from django_starterkit.common import *
 except ImportError:
     pass
 

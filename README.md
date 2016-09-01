@@ -1,4 +1,4 @@
-# django_base
+# django_starterkit
 
 Base django project structure
 ##Requirements:

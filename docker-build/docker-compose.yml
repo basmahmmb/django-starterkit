@@ -9,7 +9,7 @@ services:
     volumes:
       - ../:/usr/src/app/
     environment:
-      DJANGO_SETTINGS_MODULE: 'django_base.docker'
+      DJANGO_SETTINGS_MODULE: 'django_starterkit.docker'
       DEBUG: 'true'
     command: python manage.py runserver 0.0.0.0:9000
 
