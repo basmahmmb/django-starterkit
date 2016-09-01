@@ -1,7 +1,7 @@
 version: '2'
 services:
   server:
-    image: sitmena/django_base
+    image: sitmena/django-starterkit
     expose:
       - "9000"
     ports:
