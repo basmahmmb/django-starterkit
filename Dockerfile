@@ -1,4 +1,4 @@
-FROM python:2.7
+FROM python:latest
 ARG settings
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
