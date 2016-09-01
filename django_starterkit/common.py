@@ -43,6 +43,7 @@ INSTALLED_APPS += [
     'djangobower',
     'crispy_forms',
     'channels',
+    'sit_builder',
 ]
 
 # my apps
