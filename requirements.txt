@@ -16,3 +16,4 @@ Twisted==16.4.0
 txaio==2.5.1
 zope.interface==4.3.0
 git+git://github.com/ahmadiga/sit-builder.git
+MySQL-python

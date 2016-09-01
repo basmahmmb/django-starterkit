@@ -1,0 +1,27 @@
+version: '2'
+services:
+  server:
+    build: ../
+    expose:
+      - "9000"
+    ports:
+      - "9000:9000"
+    volumes:
+      - ../:/usr/src/app/
+    environment:
+      DJANGO_SETTINGS_MODULE: 'django_base.docker'
+      DEBUG: 'true'
+    command: python manage.py runserver 0.0.0.0:9000
+
+  cadvisor:
+    restart: always
+    image: google/cadvisor:latest
+    expose:
+      - "8080"
+    ports:
+      - "8080:8080"
+    volumes:
+      - /:/rootfs
+      - /var/run:/var/run
+      - /sys:/sys
+      - /var/lib/docker/:/var/lib/docker

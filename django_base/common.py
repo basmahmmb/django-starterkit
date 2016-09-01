@@ -134,7 +134,7 @@ COMPRESS_PRECOMPILERS = (
 )
 COMPRESS_URL = "/static/"
 
-# Django registration 
+# Django registration
 ACCOUNT_ACTIVATION_DAYS = 7
 
 # Crispy forms
