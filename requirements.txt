@@ -2,7 +2,7 @@ asgiref==0.14.0
 autobahn==0.16.0
 channels==0.17.2
 daphne==0.15.0
-Django==1.8
+Django==1.9.9
 django-appconf==1.0.2
 django-bower==5.1.0
 django-compressor==2.1
