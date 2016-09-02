@@ -44,6 +44,7 @@ INSTALLED_APPS += [
     'crispy_forms',
     'channels',
     'sit_builder',
+    'parsley',
 ]
 
 # my apps
