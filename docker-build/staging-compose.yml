@@ -19,7 +19,6 @@ services:
       - memcache:memcache
     depends_on:
       - mysql
-      - redis
       - memcache
 
   cadvisor:
@@ -60,3 +59,10 @@ services:
       MYSQL_DATABASE: dbname
       MYSQL_USER: user
       MYSQL_PASSWORD: pass
+
+
+  memcache:
+    restart: always
+    image: memcached:latest
+    ports:
+      - "11211:11211"
