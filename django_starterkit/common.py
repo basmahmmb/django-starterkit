@@ -141,11 +141,3 @@ ACCOUNT_ACTIVATION_DAYS = 7
 
 # Crispy forms
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
-
-# channels settings
-CHANNEL_LAYERS = {
-    "default": {
-        "BACKEND": "asgiref.inmemory.ChannelLayer",
-        "ROUTING": "main.routing.channel_routing",
-    },
-}

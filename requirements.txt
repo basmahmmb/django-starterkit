@@ -10,7 +10,6 @@ django-crispy-forms==1.6.0
 django-parsley==0.6
 django-registration==2.1.2
 futures==3.0.5
-PyMySQL==0.7.8
 rcssmin==1.0.6
 rjsmin==1.0.12
 git+git://github.com/S-Intelligent-Technologies/django-builder.git
@@ -18,3 +17,7 @@ six==1.10.0
 Twisted==16.4.0
 txaio==2.5.1
 zope.interface==4.3.0
+asgi_redis
+PyMySQL==0.7.8
+python-memcached
+asgi_ipc

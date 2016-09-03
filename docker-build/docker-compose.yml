@@ -3,15 +3,15 @@ services:
   server:
     image: sitmena/django-starterkit
     expose:
-      - "9000"
+      - "8000"
     ports:
-      - "9000:9000"
+      - "8000:8000"
     volumes:
       - ../:/usr/src/app/
     environment:
       DJANGO_SETTINGS_MODULE: 'django_starterkit.docker'
       DEBUG: 'true'
-    command: python manage.py runserver 0.0.0.0:9000
+    command: python manage.py runserver 0.0.0.0:8000
 
   cadvisor:
     restart: always
