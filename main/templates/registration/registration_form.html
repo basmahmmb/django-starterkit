@@ -1,9 +1,10 @@
 {% extends "registration/registration_base.html" %}
+{% load crispy_forms_tags %}
 {% block title %}Register for an account{% endblock %}
 {% block content %}
   {% include 'registration/form_errors.html' %}
-  <form method='post' class="well" action=''>{% csrf_token %}
-    {% include 'registration/form_fields.html' %}
+  <form method='post' action=''>{% csrf_token %}
+   {{ form|crispy }}
 
     <input type="submit" class="btn" value="Send activation email" />
   </form>

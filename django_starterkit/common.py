@@ -29,6 +29,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'django.contrib.sites',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -45,6 +46,10 @@ INSTALLED_APPS += [
     'channels',
     'sit_builder',
     'parsley',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.facebook',
 ]
 
 # my apps
@@ -141,3 +146,17 @@ ACCOUNT_ACTIVATION_DAYS = 7
 
 # Crispy forms
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
+# Auth backends
+AUTHENTICATION_BACKENDS = [
+    'django_starterkit.auth_backends.EmailOrUsernameModelBackend',
+]
+
+# set login roles
+# Choices
+# email_username
+# email
+# username
+DSK_LOGIN_FIELDS = "email_username"
+
+SITE_ID = 1

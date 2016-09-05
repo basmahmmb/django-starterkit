@@ -12,3 +12,15 @@ DATABASES = {
     }
 }
 STATIC_ROOT = os.path.join(BASE_DIR, '../statics')
+
+# channels settings
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "asgiref.inmemory.ChannelLayer",
+        "ROUTING": "main.routing.channel_routing",
+    },
+}
+
+EMAIL_BACKEND = 'django_mailgun.MailgunBackend'
+MAILGUN_ACCESS_KEY = '<your mailgun access key>'
+MAILGUN_SERVER_NAME = '<your mailgun server name>'
