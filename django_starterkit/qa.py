@@ -54,3 +54,11 @@ LOGGING = {
     },
 }
 DEBUG = False
+
+# ANYMAIL : mailgun configuration
+ANYMAIL = {
+    "MAILGUN_API_KEY": "< your api key at mailgun >",
+    "MAILGUN_SENDER_DOMAIN": "< your sender domain at mailgun >"
+}
+EMAIL_BACKEND = "anymail.backends.mailgun.MailgunBackend"
+DEFAULT_FROM_EMAIL = " <<your default from email>>"

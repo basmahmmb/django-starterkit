@@ -21,6 +21,10 @@ CHANNEL_LAYERS = {
     },
 }
 
-EMAIL_BACKEND = 'django_mailgun.MailgunBackend'
-MAILGUN_ACCESS_KEY = '<your mailgun access key>'
-MAILGUN_SERVER_NAME = '<your mailgun server name>'
+# ANYMAIL : mailgun configuration
+ANYMAIL = {
+    "MAILGUN_API_KEY": "< your api key at mailgun >",
+    "MAILGUN_SENDER_DOMAIN": "< your sender domain at mailgun >"
+}
+EMAIL_BACKEND = "anymail.backends.mailgun.MailgunBackend"
+DEFAULT_FROM_EMAIL = " <<your default from email>>"

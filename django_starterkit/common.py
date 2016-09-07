@@ -50,6 +50,7 @@ INSTALLED_APPS += [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.facebook',
+    'anymail',
 ]
 
 # my apps
@@ -160,3 +161,5 @@ AUTHENTICATION_BACKENDS = [
 DSK_LOGIN_FIELDS = "email_username"
 
 SITE_ID = 1
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
