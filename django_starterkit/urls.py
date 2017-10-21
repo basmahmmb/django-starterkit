@@ -24,6 +24,8 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^accounts/', include('registration.backends.simple.urls')),
     url(r'^accounts/', include('allauth.urls')),
+    url(r'^basmah/', include('basmah.urls')),
+
 ]
 
 if settings.DEBUG_TOOLBAR_ENABLED:
